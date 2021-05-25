@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.8</version>
 	<description>Common classes for Git family projects.</description>
 	<properties>
 		<java.version>11</java.version>
@@ -279,7 +279,9 @@
       <name>GitHub Packages</name>
       <url>https://maven.pkg.github.com/thiagolvlsantos/${project.artifactId}</url>
     </repository>
+	</distributionManagement>
 
+	<distributionManagement>
     <repository>
       <id>ossrh</id>
       <name>Central Repository OSSRH</name>
