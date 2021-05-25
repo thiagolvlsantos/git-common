@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 	<description>Common classes for Git family projects.</description>
 	<properties>
 		<java.version>11</java.version>
@@ -278,6 +278,12 @@
       <id>github</id>
       <name>GitHub Packages</name>
       <url>https://maven.pkg.github.com/thiagolvlsantos/${project.artifactId}</url>
+    </repository>
+
+    <repository>
+      <id>ossrh</id>
+      <name>Central Repository OSSRH</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
 </project>
