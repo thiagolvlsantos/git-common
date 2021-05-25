@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<description>Common classes for Git family projects.</description>
 	<properties>
 		<java.version>11</java.version>
@@ -277,7 +277,7 @@
     <repository>
       <id>github</id>
       <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/thiagolvlsantos</url>
+      <url>https://maven.pkg.github.com/thiagolvlsantos/${project.artifactId}</url>
     </repository>
   </distributionManagement>
 </project>
