@@ -1,13 +1,13 @@
 ## git-commons
 
-Classes shared for more than one `com.thiagolvlsantos.git` project.
+Classes shared for more than one `io.github.thiagolvlsantos` project.
 
 ## Usage
 
 ```xml
 		<dependency>
-			<groupId>com.thiagolvlsantos</groupId>
-			<artifactId>git-transactions</artifactId>
-			<version>${library.version}</version>
+			<groupId>io.github.thiagolvlsantos</groupId>
+			<artifactId>git-commons</artifactId>
+			<version>CURRENT_VERSION</version>
 		</dependency>
 ```
