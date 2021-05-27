@@ -3,10 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>com.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
 	<version>1.0.9-SNAPSHOT</version>
+
 	<description>Common classes for Git family projects.</description>
+
 	<properties>
 		<java.version>11</java.version>
 		<maven.compiler.source>11</maven.compiler.source>
@@ -81,14 +84,25 @@
 		<plugins>
 
 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.6</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<inherited>true</inherited>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<inherited>true</inherited>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
 				<executions>
 					<execution>
-						<id>prepare-agent</id>
+						<id>attach-source</id>
 						<goals>
-							<goal>prepare-agent</goal>
+							<goal>jar-no-fork</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -96,9 +110,13 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.5</version>
-				<inherited>true</inherited>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
 			</plugin>
 
 			<plugin>
@@ -125,38 +143,16 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
-				<inherited>true</inherited>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
 				<executions>
 					<execution>
-						<id>attach-source</id>
+						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-install-plugin</artifactId>
-				<version>2.5.1</version>
-				<inherited>true</inherited>
 			</plugin>
 
 			<plugin>
@@ -174,7 +170,7 @@
 
 	<profiles>
 		<profile>
-			<id>nexus</id>
+			<id>ci-cd</id>
 			<distributionManagement>
 				<snapshotRepository>
 					<id>nexus-release</id>
@@ -191,32 +187,6 @@
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>2.2.1</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.9.1</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
 						<version>1.6</version>
 						<executions>
@@ -226,6 +196,14 @@
 								<goals>
 									<goal>sign</goal>
 								</goals>
+								<configuration>
+									<!-- Prevent gpg from using pinentry programs. Fixes: gpg: signing 
+										19 failed: Inappropriate ioctl for device -->
+									<gpgArguments>
+										<arg>--pinentry-mode</arg>
+										<arg>loopback</arg>
+									</gpgArguments>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>
