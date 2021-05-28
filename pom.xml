@@ -257,7 +257,7 @@
 				<repository>
 					<id>github</id>
 					<name>GitHub Packages</name>
-					<url>https://maven.pkg.github.com/io/github/thiagolvlsantos/${project.artifactId}</url>
+					<url>https://maven.pkg.github.com/thiagolvlsantos/${project.artifactId}</url>
 				</repository>
 			</distributionManagement>
 			<build>
