@@ -6,6 +6,7 @@
 	<artifactId>git-commons</artifactId>
 	<version>1.0.12-SNAPSHOT</version>
 
+	<name>git-commons</name>
 	<description>Common classes for Git family projects.</description>
 
 	<properties>
