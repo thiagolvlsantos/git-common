@@ -1,0 +1,1 @@
+mvn -Pnexus release:perform
