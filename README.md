@@ -1,6 +1,6 @@
 ## git-commons
 
-Classes shared for more than one `io.github.thiagolvlsantos` project.
+Classes shared for more than one `io.github.thiagolvlsantos.git` project.
 
 ## Usage
 
