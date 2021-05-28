@@ -4,7 +4,7 @@
 
 	<groupId>io.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.19-SNAPSHOT</version>
+	<version>1.0.19</version>
 
 	<name>git-commons</name>
 	<description>Common classes for Git family projects.</description>
@@ -22,7 +22,7 @@
 		<url>scm:git:git@github.com:thiagolvlsantos/git-commons</url>
 		<connection>scm:git:git@github.com:thiagolvlsantos/git-commons</connection>
 		<developerConnection>scm:git:git@github.com:thiagolvlsantos/git-commons</developerConnection>
-		<tag>git-commons-1.0.11</tag>
+		<tag>git-commons-1.0.19</tag>
 	</scm>
 
 	<url>https://github.com/thiagolvlsantos/git-commons</url>
