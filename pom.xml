@@ -17,7 +17,17 @@
 		<maven.compiler.target>${java-version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<!-- LOMBOK -->
 		<lombok.version>1.18.20</lombok.version>
+		
+		<!-- JUNIT -->
+		<junit.version>4.12</junit.version>
+		
+		<!-- SONAR -->
+		<sonar.projectKey>thiagolvlsantos_git-commons</sonar.projectKey>
+		<sonar.organization>thiagolvlsantos-projects</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<scm>
@@ -66,7 +76,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
