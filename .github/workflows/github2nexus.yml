@@ -1,4 +1,4 @@
-name: Publish to Nexus
+name: Github to Nexus
 on:
   release:
     types: [created]
