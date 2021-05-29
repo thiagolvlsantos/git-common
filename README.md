@@ -17,6 +17,6 @@ Classes shared for more than one `io.github.thiagolvlsantos.git` project.
 		<dependency>
 			<groupId>io.github.thiagolvlsantos</groupId>
 			<artifactId>git-commons</artifactId>
-			<version>CURRENT_VERSION</version>
+			<version>${central_repository_version}</version>
 		</dependency>
 ```
