@@ -1,5 +1,6 @@
 package io.github.thiagolvlsantos.git.commons.file;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -8,6 +9,22 @@ import java.io.IOException;
 import org.junit.Test;
 
 public class FileUtilsTest {
+
+	@Test
+	public void testPrepareOk() throws IOException {
+		File file = new File("target", "git-commons" + File.separator + "test.txt");
+		assertTrue(FileUtils.prepare(file));
+	}
+
+	@Test
+	public void testPrepareNotOk() throws IOException {
+		File file = File.createTempFile("git-commons", "_test.txt");
+		assertTrue(FileUtils.prepare(file));
+
+		File sub = new File(file.getParentFile(), "sub" + File.separator + "file.txt");
+		FileUtils.delete(sub);
+		assertFalse(FileUtils.prepare(sub));
+	}
 
 	@Test
 	public void testCreate() throws IOException {

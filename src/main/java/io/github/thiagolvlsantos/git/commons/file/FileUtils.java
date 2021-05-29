@@ -29,11 +29,9 @@ public class FileUtils {
 		if (file.isDirectory()) {
 			File[] children = file.listFiles();
 			for (File c : children) {
-				boolean d = delete(c);
-				ok = ok && d;
+				ok = delete(c) && ok;
 			}
 		}
-		boolean d = file.delete();
-		return ok && d;
+		return file.delete() && ok;
 	}
 }
