@@ -12,14 +12,14 @@ public class FileUtilsTest {
 	@Test
 	public void testCreate() throws IOException {
 		File file = new File("target", "git-commons" + File.separator + "test.txt");
-		FileUtils.write(file, "OK"); // not exists
-		FileUtils.write(file, "OK"); // already exists
+		assertTrue(FileUtils.write(file, "OK")); // not exists
+		assertTrue(FileUtils.write(file, "OK")); // already exists
 	}
 
 	@Test
 	public void testDelete() throws IOException {
 		File file = new File("target", "git-commons" + File.separator + "test.txt");
-		FileUtils.write(file, "OK");
+		assertTrue(FileUtils.write(file, "OK"));
 		assertTrue(FileUtils.delete(file.getParentFile()));
 	}
 
@@ -28,11 +28,11 @@ public class FileUtilsTest {
 		File root = new File("target", "git-commons");
 
 		File file = new File(root, "test.txt");
-		FileUtils.write(file, "OK");
+		assertTrue(FileUtils.write(file, "OK"));
 
 		File sub1 = new File(root, "sub1");
 		File child1 = new File(sub1, "child.txt");
-		FileUtils.write(child1, "Child");
+		assertTrue(FileUtils.write(child1, "Child"));
 
 		File empty = new File(root, "empty");
 		assertTrue(empty.mkdirs());

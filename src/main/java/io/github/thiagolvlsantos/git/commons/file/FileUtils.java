@@ -10,27 +10,30 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class FileUtils {
 
-	public static void write(File f, String content) throws IOException {
-		if (!f.exists() && !prepare(f)) {
+	public static boolean write(File file, String content) throws IOException {
+		if (!file.exists() && !prepare(file)) {
 			throw new IOException("Unable to setup file structure.");
 		}
-		Files.write(f.toPath(), String.valueOf(content).getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE,
-				StandardOpenOption.TRUNCATE_EXISTING);
+		Files.write(file.toPath(), String.valueOf(content).getBytes(), StandardOpenOption.CREATE,
+				StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+		return true;
 	}
 
-	public static boolean prepare(File f) {
-		File dir = f.getParentFile();
+	public static boolean prepare(File file) {
+		File dir = file.getParentFile();
 		return dir.exists() || dir.mkdirs();
 	}
 
-	public static boolean delete(File f) {
+	public static boolean delete(File file) {
 		boolean ok = true;
-		if (f.isDirectory()) {
-			File[] children = f.listFiles();
+		if (file.isDirectory()) {
+			File[] children = file.listFiles();
 			for (File c : children) {
-				ok = ok & delete(c);
+				boolean d = delete(c);
+				ok = ok && d;
 			}
 		}
-		return ok & f.delete();
+		boolean d = file.delete();
+		return ok && d;
 	}
 }
