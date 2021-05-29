@@ -30,7 +30,7 @@ public class FileUtils {
 		return dir.mkdirs();
 	}
 
-	public static boolean delete(File file) {
+	public static boolean delete(File file) throws IOException {
 		boolean ok = true;
 		if (file.isDirectory()) {
 			File[] children = file.listFiles();
@@ -38,6 +38,7 @@ public class FileUtils {
 				ok = delete(c) & ok;
 			}
 		}
-		return file.delete() & ok;
+		Files.delete(file.toPath());
+		return ok;
 	}
 }
