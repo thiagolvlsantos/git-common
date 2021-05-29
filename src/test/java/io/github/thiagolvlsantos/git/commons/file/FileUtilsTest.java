@@ -13,13 +13,13 @@ public class FileUtilsTest {
 	private File root = new File("target", "git-commons");
 
 	@Test
-	public void testPrepareOk() throws IOException {
+	public void testPrepareNew() throws IOException {
 		File file = new File(root, "test.txt");
 		assertTrue(FileUtils.prepare(file));
 	}
 
 	@Test
-	public void testPrepareNotOk() throws IOException {
+	public void testPrepareExisting() throws IOException {
 		File file = File.createTempFile("git-commons", "_test.txt");
 		assertTrue(FileUtils.prepare(file));
 	}

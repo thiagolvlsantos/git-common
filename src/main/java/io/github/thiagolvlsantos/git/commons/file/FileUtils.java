@@ -12,10 +12,7 @@ public class FileUtils {
 
 	public static boolean write(File file, String content) throws IOException {
 		if (!file.exists()) {
-			boolean ok = prepare(file);
-			if (!ok) {
-				throw new IOException("Unable to setup file structure.");
-			}
+			prepare(file);
 		}
 		Files.write(file.toPath(), String.valueOf(content).getBytes(), StandardOpenOption.CREATE,
 				StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
@@ -31,14 +28,13 @@ public class FileUtils {
 	}
 
 	public static boolean delete(File file) throws IOException {
-		boolean ok = true;
 		if (file.isDirectory()) {
 			File[] children = file.listFiles();
 			for (File c : children) {
-				ok = delete(c) & ok;
+				delete(c);
 			}
 		}
 		Files.delete(file.toPath());
-		return ok;
+		return true;
 	}
 }
