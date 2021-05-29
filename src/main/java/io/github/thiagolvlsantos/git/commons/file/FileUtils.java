@@ -11,10 +11,10 @@ import lombok.experimental.UtilityClass;
 public class FileUtils {
 
 	public boolean write(File file, String content) throws IOException {
-		prepare(file);
+		boolean ok = prepare(file);
 		Files.write(file.toPath(), String.valueOf(content).getBytes(), StandardOpenOption.CREATE,
 				StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
-		return true;
+		return ok;
 	}
 
 	public boolean prepare(File file) {
