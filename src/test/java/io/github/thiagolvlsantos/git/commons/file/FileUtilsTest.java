@@ -1,18 +1,20 @@
 package io.github.thiagolvlsantos.git.commons.file;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
 
+import org.junit.After;
 import org.junit.Test;
 
 public class FileUtilsTest {
 
+	private File root = new File("target", "git-commons");
+
 	@Test
 	public void testPrepareOk() throws IOException {
-		File file = new File("target", "git-commons" + File.separator + "test.txt");
+		File file = new File(root, "test.txt");
 		assertTrue(FileUtils.prepare(file));
 	}
 
@@ -20,30 +22,23 @@ public class FileUtilsTest {
 	public void testPrepareNotOk() throws IOException {
 		File file = File.createTempFile("git-commons", "_test.txt");
 		assertTrue(FileUtils.prepare(file));
-
-		File sub = new File(file.getParentFile(), "sub" + File.separator + "file.txt");
-		FileUtils.delete(sub);
-		assertFalse(FileUtils.prepare(sub));
 	}
 
 	@Test
-	public void testCreate() throws IOException {
-		File file = new File("target", "git-commons" + File.separator + "test.txt");
+	public void testWriteOk() throws IOException {
+		File file = new File(root, "test.txt");
 		assertTrue(FileUtils.write(file, "OK")); // not exists
 		assertTrue(FileUtils.write(file, "OK")); // already exists
 	}
 
 	@Test
 	public void testDelete() throws IOException {
-		File file = new File("target", "git-commons" + File.separator + "test.txt");
+		File file = new File(root, "test.txt");
 		assertTrue(FileUtils.write(file, "OK"));
-		assertTrue(FileUtils.delete(file.getParentFile()));
 	}
 
 	@Test
 	public void testDeleteChildren() throws IOException {
-		File root = new File("target", "git-commons");
-
 		File file = new File(root, "test.txt");
 		assertTrue(FileUtils.write(file, "OK"));
 
@@ -53,7 +48,14 @@ public class FileUtilsTest {
 
 		File empty = new File(root, "empty");
 		assertTrue(empty.mkdirs());
+	}
 
-		assertTrue(FileUtils.delete(root));
+	@After
+	public void clean() throws IOException {
+		if (root.exists()) {
+			if (!FileUtils.delete(root)) {
+				throw new IOException("Could not delete.");
+			}
+		}
 	}
 }
