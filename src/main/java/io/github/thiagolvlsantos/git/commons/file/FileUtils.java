@@ -10,16 +10,14 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class FileUtils {
 
-	public static boolean write(File file, String content) throws IOException {
-		if (!file.exists()) {
-			prepare(file);
-		}
+	public boolean write(File file, String content) throws IOException {
+		prepare(file);
 		Files.write(file.toPath(), String.valueOf(content).getBytes(), StandardOpenOption.CREATE,
 				StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
 		return true;
 	}
 
-	public static boolean prepare(File file) {
+	public boolean prepare(File file) {
 		File dir = file.getParentFile();
 		if (dir.exists()) {
 			return true;
@@ -27,7 +25,7 @@ public class FileUtils {
 		return dir.mkdirs();
 	}
 
-	public static boolean delete(File file) throws IOException {
+	public boolean delete(File file) throws IOException {
 		if (file.isDirectory()) {
 			File[] children = file.listFiles();
 			for (File c : children) {
