@@ -21,4 +21,5 @@ jobs:
       - name: Publish package
         run: mvn -U -B -Prelease release:clean release:prepare
         env:
+          GITHUB_ACTOR: thiagolvlsantos
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }} # has to be other that the original which has not commit rigths
