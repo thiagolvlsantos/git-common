@@ -1,18 +1,20 @@
 name: Release
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person`s name'
-        required: true
-      home:
-        description: 'Location name.'
-        required: false
-
+   
 jobs:
-  say_hello:
-    runs-on: ubuntu-latest
+  publish:
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: read
+      packages: write 
     steps:
-      - run: |
-          echo "Hello ${{ github.event.inputs.name }}!"
-          echo "- in ${{ github.event.inputs.home }}!"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Publish package
+        run: mvn -U -B -Prelease release:clean release:prepare
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
