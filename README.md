@@ -1,6 +1,6 @@
 ## git-commons
 
-[![CI with Maven](https://github.com/thiagolvlsantos/git-commons/actions/workflows/maven.yml/badge.svg)] https://github.com/thiagolvlsantos/git-commons/actions/workflows/maven.yml)
+[![CI with Maven](https://github.com/thiagolvlsantos/git-commons/actions/workflows/maven.yml/badge.svg)] (https://github.com/thiagolvlsantos/git-commons/actions/workflows/maven.yml)
 [![CI with CodeQL](https://github.com/thiagolvlsantos/git-commons/actions/workflows/codeql.yml/badge.svg)](https://github.com/thiagolvlsantos/git-commons/actions/workflows/codeql.yml)
 [![CI with Sonar](https://github.com/thiagolvlsantos/git-commons/actions/workflows/sonar.yml/badge.svg)](https://github.com/thiagolvlsantos/git-commons/actions/workflows/sonar.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=thiagolvlsantos_git-commons&metric=alert_status)](https://sonarcloud.io/dashboard?id=thiagolvlsantos_git-commons)
