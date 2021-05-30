@@ -14,11 +14,11 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Set Git User
+      - name: Configure Git User
         run: |
-          git config --global user.email "thiagolvlsantos@gmail.com"
-          git config --global user.name "Thiago Santos"
+          git config user.email "thiagolvlsantos@gmail.com"
+          git config user.name "Thiago Santos"
       - name: Publish package
         run: mvn -U -B -Prelease release:clean release:prepare
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password
