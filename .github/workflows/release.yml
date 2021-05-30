@@ -23,7 +23,7 @@ jobs:
           mkdir ~/.ssh
           touch ~/.ssh/id_ed25519
           chmod 700 ~/.ssh/id_ed25519
-          echo ${{ secrets.GIT_PUBLIC_KEY }} > ~/.ssh/id_ed25519
+          echo ${{ secrets.SSH_KEY }} > ~/.ssh/id_ed25519
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_ed25519
       - name: Publish package
