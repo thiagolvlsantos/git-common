@@ -6,14 +6,14 @@
 	<artifactId>git-commons</artifactId>
 	<version>1.0.29-SNAPSHOT</version>
 
-	<name>git-commons</name>
+	<name>${project.artifactId}</name>
 	<description>Common classes for Git family projects.</description>
 
 	<properties>
 		<!-- COMPILER -->
 		<java.version>1.8</java.version>
-		<maven.compiler.source>${java-version}</maven.compiler.source>
-		<maven.compiler.target>${java-version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 
 		<!-- ENCODING -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,18 +27,18 @@
 
 		<!-- SONARCLOUD -->
 		<sonar.organization>thiagolvlsantos-projects</sonar.organization>
-		<sonar.projectKey>thiagolvlsantos_git-commons</sonar.projectKey>
+		<sonar.projectKey>thiagolvlsantos_${project.artifactId}</sonar.projectKey>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<scm>
-		<url>scm:git:git@github.com:thiagolvlsantos/git-commons</url>
-		<connection>scm:git:git@github.com:thiagolvlsantos/git-commons</connection>
-		<developerConnection>scm:git:git@github.com:thiagolvlsantos/git-commons</developerConnection>
-		<tag>git-commons-1.0.25</tag>
+		<url>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</url>
+		<connection>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</connection>
+		<developerConnection>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 
-	<url>https://github.com/thiagolvlsantos/git-commons</url>
+	<url>https://github.com/thiagolvlsantos/${project.artifactId}</url>
 	<inceptionYear>2021</inceptionYear>
 
 	<organization>
@@ -64,7 +64,7 @@
 	</licenses>
 
 	<issueManagement>
-		<url>https://github.com/thiagolvlsantos/git-commons/issues</url>
+		<url>https://github.com/thiagolvlsantos/${project.artifactId}/issues</url>
 	</issueManagement>
 
 	<dependencies>
