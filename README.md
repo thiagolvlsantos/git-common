@@ -14,6 +14,9 @@ Classes shared for more than one `io.github.thiagolvlsantos.git` project.
 
 ## Usage
 
+`central_repository_version`=
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.thiagolvlsantos/git-commons/badge.svg)](https://repo1.maven.org/maven2/io/github/thiagolvlsantos/git-commons/)
+
 ```xml
 		<dependency>
 			<groupId>io.github.thiagolvlsantos</groupId>
