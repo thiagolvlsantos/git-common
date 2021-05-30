@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
    
 jobs:
-  publish:
+  prepare:
     runs-on: ubuntu-latest 
     permissions: 
       contents: read
