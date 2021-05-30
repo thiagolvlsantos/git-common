@@ -14,13 +14,12 @@ Classes shared for more than one `io.github.thiagolvlsantos.git` project.
 
 ## Usage
 
-`central_repository_version`=
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.thiagolvlsantos/git-commons/badge.svg)](https://repo1.maven.org/maven2/io/github/thiagolvlsantos/git-commons/)
+Include latest version [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.thiagolvlsantos/git-commons/badge.svg)](https://repo1.maven.org/maven2/io/github/thiagolvlsantos/git-commons/) to your project.
 
 ```xml
 		<dependency>
 			<groupId>io.github.thiagolvlsantos</groupId>
 			<artifactId>git-commons</artifactId>
-			<version>${central_repository_version}</version>
+			<version>${latestVersion}</version>
 		</dependency>
 ```
