@@ -20,6 +20,7 @@ jobs:
           git config user.name "Thiago Santos"
       - name: Configure SSH
         run: |
+          mkdir ~/.ssh
           touch ~/.ssh/id_ed25519
           echo ${{ secrets.GIT_PUBLIC_KEY }} > ~/.ssh/id_ed25519
           ssh-add ~/.ssh/id_ed25519
