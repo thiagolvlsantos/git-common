@@ -1,1 +1,1 @@
-mvn -U -Prelease release:clean release:prepare
+mvn -U -B -Prelease release:clean release:prepare
