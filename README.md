@@ -23,3 +23,7 @@ Include latest version [![Maven Central](https://maven-badges.herokuapp.com/mave
 			<version>${latestVersion}</version>
 		</dependency>
 ```
+
+## Build
+
+Localy, from this root directory call Maven commands or `bin/<script name>` at our will.
