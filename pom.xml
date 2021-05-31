@@ -33,7 +33,7 @@
 
 	<scm>
 		<url>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</url>
-		<connection>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</connection>
+		<connection>scm:git:${GIT_USERNAME}:${GIT_PASSWORD}@github.com:thiagolvlsantos/${project.artifactId}</connection>
 		<developerConnection>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
