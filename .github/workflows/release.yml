@@ -18,6 +18,11 @@ jobs:
         run: |
           git config user.email "thiagolvlsantos@gmail.com"
           git config user.name "Thiago Santos"
+      - name: Set up known hosts
+        run: |
+          mkdir ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
       - name: Prepare repository
         run: mvn -U -B --no-transfer-progress -s release_settings.xml -Prelease release:clean release:prepare
         env:
