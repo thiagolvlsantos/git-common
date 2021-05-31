@@ -18,15 +18,5 @@ jobs:
         run: |
           git config user.email "thiagolvlsantos@gmail.com"
           git config user.name "Thiago Santos"
-      - name: Set up known hosts
-        run: |
-          mkdir ~/.ssh
-          chmod 700 ~/.ssh
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
       - name: Prepare repository
-        run: mvn -U -B --no-transfer-progress -s release_settings.xml -Prelease release:clean release:prepare
-        env:
-          GIT_USERNAME: thiagolvlsantos
-          GIT_PASSWORD: ${{ secrets.GIT_TOKEN }}
-          GITHUB_ACTOR: thiagolvlsantos
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }} # has to be other, the original which has not commit rigths
+        run: mvn -U -B --no-transfer-progress -Prelease release:clean release:prepare
