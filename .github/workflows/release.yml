@@ -19,7 +19,7 @@ jobs:
           git config user.email "thiagolvlsantos@gmail.com"
           git config user.name "Thiago Santos"
       - name: Prepare repository
-        run: mvn -U -B --no-transfer-progress -s TESTErelease_settings.xml -Prelease release:clean release:prepare
+        run: mvn -U -B --no-transfer-progress -s release_settings.xml -Prelease release:clean release:prepare
         env:
           GITHUB_ACTOR: thiagolvlsantos
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }} # has to be other, the original which has not commit rigths
