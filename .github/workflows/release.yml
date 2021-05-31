@@ -21,5 +21,5 @@ jobs:
       - name: Prepare repository
         run: mvn -U -B --no-transfer-progress -s release_settings.xml -Prelease release:clean release:prepare
         env:
-          GITHUB_ACTOR: thiagolvlsantos
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }} # has to be other, the original which has not commit rigths
+          GIT_USERNAME: thiagolvlsantos
+          GIT_PASSWORD: ${{ secrets.GIT_TOKEN }}
