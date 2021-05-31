@@ -32,10 +32,10 @@
 	</properties>
 
 	<scm>
-		<url>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</url>
-		<connection>scm:git:${GIT_USERNAME}:${GIT_PASSWORD}@github.com:thiagolvlsantos/${project.artifactId}</connection>
-		<developerConnection>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}</developerConnection>
-		<tag>HEAD</tag>
+	        <url>https://github.com/thiagolvlsantos/${project.artifactId}.git</url>
+    		<connection>scm:git:git://github.com/thiagolvlsantos/${project.artifactId}.git</connection>
+     		<developerConnection>scm:git:git@github.com:thiagolvlsantos/${project.artifactId}.git</developerConnection>
+     		<tag>HEAD</tag>
 	</scm>
 
 	<url>https://github.com/thiagolvlsantos/${project.artifactId}</url>
