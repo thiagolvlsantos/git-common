@@ -4,12 +4,14 @@
 
 	<groupId>io.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.30</version>
+	<version>1.0.30-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
 	<description>Common classes for Git family projects.</description>
 
 	<properties>
+		<!-- Server ID -->
+		<project.scm.id>github</project.scm.id>
 		<!-- PROJECT INFORMATION -->
 		<project.domain.name>github.com</project.domain.name>
 		<project.domain.reverse>com.github</project.domain.reverse>
