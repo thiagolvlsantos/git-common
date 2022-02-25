@@ -4,7 +4,7 @@
 
 	<groupId>io.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.30</version>
+	<version>1.0.30-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
 	<description>Common classes for Git family projects.</description>
@@ -238,6 +238,10 @@
 		</profile>
 		<profile>
 			<id>release</id>
+			<properties>
+				<!-- Server ID -->
+				<project.scm.id>github</project.scm.id>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
