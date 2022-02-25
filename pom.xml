@@ -4,14 +4,12 @@
 
 	<groupId>io.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.30</version>
+	<version>1.0.30-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
 	<description>Common classes for Git family projects.</description>
 
 	<properties>
-		<!-- Server ID -->
-		<project.scm.id>github</project.scm.id>
 		<!-- PROJECT INFORMATION -->
 		<project.domain.name>github.com</project.domain.name>
 		<project.domain.reverse>com.github</project.domain.reverse>
@@ -19,7 +17,7 @@
 		<project.owner.name>Thiago Santos</project.owner.name>
 		<project.owner.email>thiagolvlsantos@gmail.com</project.owner.email>
 		<project.inception>2021</project.inception>
-	
+
 		<!-- COMPILER -->
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -240,6 +238,10 @@
 		</profile>
 		<profile>
 			<id>release</id>
+			<properties>
+				<!-- Server ID -->
+				<project.scm.id>github</project.scm.id>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -322,8 +324,7 @@
 				</repository>
 			</distributionManagement>
 			<build>
-				<plugins>
-				</plugins>
+				<plugins></plugins>
 			</build>
 		</profile>
 	</profiles>
