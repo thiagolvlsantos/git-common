@@ -4,7 +4,7 @@
 
 	<groupId>io.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.30</version>
+	<version>1.0.30-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
 	<description>Common classes for Git family projects.</description>
@@ -42,8 +42,8 @@
 
 	<scm>
 		<url>https://${project.domain.name}/${project.owner.login}/${project.artifactId}.git</url>
-		<connection>scm:git:ssh://${project.domain.name}/${project.owner.login}/${project.artifactId}.git</connection>
-		<developerConnection>scm:git:ssh@${project.domain.name}:${project.owner.login}/${project.artifactId}.git</developerConnection>
+		<connection>scm:git:git://${project.domain.name}/${project.owner.login}/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@${project.domain.name}:${project.owner.login}/${project.artifactId}.git</developerConnection>
 		<tag>git-commons-1.0.30</tag>
 	</scm>
 
