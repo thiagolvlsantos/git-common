@@ -4,7 +4,7 @@
 
 	<groupId>io.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.30</version>
+	<version>1.0.30-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
 	<description>Common classes for Git family projects.</description>
@@ -246,11 +246,6 @@
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-scm-plugin</artifactId>
-						<version>2.0.0-M1</version>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-release-plugin</artifactId>
 						<version>2.5.3</version>
 						<configuration>
@@ -258,6 +253,7 @@
 							<useReleaseProfile>false</useReleaseProfile>
 							<releaseProfiles>release</releaseProfiles>
 							<goals>deploy</goals>
+							<connectionUrl>${project.scm.developerConnection}</connectionUrl>
 						</configuration>
 					</plugin>
 				</plugins>
