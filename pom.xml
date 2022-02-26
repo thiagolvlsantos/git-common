@@ -4,7 +4,7 @@
 
 	<groupId>io.github.thiagolvlsantos</groupId>
 	<artifactId>git-commons</artifactId>
-	<version>1.0.30-SNAPSHOT</version>
+	<version>1.0.30</version>
 
 	<name>${project.artifactId}</name>
 	<description>Common classes for Git family projects.</description>
