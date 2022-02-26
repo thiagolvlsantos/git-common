@@ -7,7 +7,7 @@
 	<version>1.0.31-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
-	<description>Common classes for Git family projects.</description>
+	<description>Common classes for Github projects.</description>
 
 	<properties>
 		<!-- PROJECT INFORMATION -->
