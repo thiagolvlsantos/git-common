@@ -1,7 +1,7 @@
 name: Github to Nexus
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   release:
     types: [created]
 jobs:
