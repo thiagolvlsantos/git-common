@@ -16,8 +16,8 @@ public class PropertyUtilsTest {
 	public void testMerged() throws IOException {
 		Properties p = PropertyUtils.merged("file.properties");
 		assertFalse(p.containsKey("index"));
-		assertEquals(p.get("$eq"), "PredicateEquals");
-		assertEquals(p.get("$=="), "PredicateEquals");
-		assertEquals(p.get("$ne"), "MyPredicateNotEquals");
+		assertEquals("PredicateEquals", p.get("$eq"));
+		assertEquals("PredicateEquals", p.get("$=="));
+		assertEquals("MyPredicateNotEquals", p.get("$ne"));
 	}
 }

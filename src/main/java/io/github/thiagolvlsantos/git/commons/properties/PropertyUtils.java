@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.List;
@@ -41,7 +40,7 @@ public class PropertyUtils {
 	}
 
 	public static List<URL> resources(String... resources) throws IOException {
-		List<URL> result = new LinkedList<URL>();
+		List<URL> result = new LinkedList<>();
 		if (resources != null) {
 			for (String resource : resources) {
 				Enumeration<URL> urls = ClassLoader.getSystemResources(resource);
@@ -54,14 +53,14 @@ public class PropertyUtils {
 	}
 
 	public static void sort(List<Properties> props) {
-		Collections.sort(props, new Comparator<Properties>() {
-			@Override
-			public int compare(Properties o1, Properties o2) {
-				String key = "index";
-				double index1 = o1.containsKey(key) ? Double.valueOf((String) o1.get(key)) : 0.0;
-				double index2 = o2.containsKey(key) ? Double.valueOf((String) o2.get(key)) : 0.0;
-				return index1 < index2 ? -1 : (index2 < index1 ? 1 : 0);
+		Collections.sort(props, (o1, o2) -> {
+			String key = "index";
+			double index1 = o1.containsKey(key) ? Double.valueOf((String) o1.get(key)) : 0.0;
+			double index2 = o2.containsKey(key) ? Double.valueOf((String) o2.get(key)) : 0.0;
+			if (index1 < index2) {
+				return -1;
 			}
+			return (index2 < index1 ? 1 : 0);
 		});
 	}
 
