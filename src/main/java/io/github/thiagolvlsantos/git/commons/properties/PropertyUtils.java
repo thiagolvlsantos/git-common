@@ -34,9 +34,9 @@ public class PropertyUtils {
 
 	public static List<String> getDefault(String resource) {
 		int pos = resource.lastIndexOf('.');
-		String default_short = resource.substring(0, pos) + "_df" + resource.substring(pos);
-		String default_long = resource.substring(0, pos) + "_default" + resource.substring(pos);
-		return Arrays.asList(default_short, default_long);
+		String defaultShort = resource.substring(0, pos) + "_df" + resource.substring(pos);
+		String defaultLong = resource.substring(0, pos) + "_default" + resource.substring(pos);
+		return Arrays.asList(defaultShort, defaultLong);
 	}
 
 	public static List<URL> resources(String... resources) throws IOException {
