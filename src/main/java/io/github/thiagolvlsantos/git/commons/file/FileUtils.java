@@ -32,6 +32,7 @@ public class FileUtils {
 				delete(c);
 			}
 		}
+		file.setWritable(true);
 		Files.delete(file.toPath());
 		return true;
 	}
