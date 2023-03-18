@@ -28,10 +28,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- LOMBOK -->
-		<lombok.version>1.18.20</lombok.version>
+		<lombok.version>1.18.26</lombok.version>
 
 		<!-- JUNIT -->
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.2</junit.version>
 
 		<!-- SONARCLOUD -->
 		<sonar.user>thiagolvlsantos</sonar.user>
