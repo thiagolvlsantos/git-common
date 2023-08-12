@@ -6,10 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 
 import lombok.experimental.UtilityClass;
-import lombok.extern.slf4j.Slf4j;
 
 @UtilityClass
-@Slf4j
 public class FileUtils {
 
 	public boolean write(File file, String content) throws IOException {
@@ -36,7 +34,7 @@ public class FileUtils {
 		}
 		boolean writable = file.setWritable(true);
 		if (!writable) {
-		    log.debug("Not writable: {}", file);
+			// do nothing
 		}
 		Files.delete(file.toPath());
 		return true;
